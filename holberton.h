@@ -13,6 +13,7 @@ int _print_int_count_helper(int);
 int _print_int(va_list);
 int _print_str(va_list);
 int _print_char(va_list);
+int _print_percent(va_list);
 
 /*main functions to prototype*/
 int _printf(const char *format, ...);

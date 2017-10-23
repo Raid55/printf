@@ -16,25 +16,30 @@ int _printf(const char *format, ...)
 		{"s", _print_str},
 		{"i", _print_int},
 		{"d", _print_int},
+		{"%", _print_percent},
 		{NULL, NULL}
 	};
+
+	if (!format)
+		return (-1);
 
 	va_start(valist, format);
 	i = 0, j = 0, sum = 0;
 
-	while (format && format[i])
+	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
-			_putchar('%'), sum++, i += 2;
-		else if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (-1);
+		if (format[i] == '%')
 			/*start of mods while logic*/
 			while (mods[j++].mod)
 				if (format[i + 1] == (*mods[j - 1].mod))
 					sum += mods[j - 1].func(valist), i += 2;
 			/*end of while logic*/
-			/*prints format and incr sum by 1*/
+		if (format[i] && format[i] != '%')
+			_putchar(format[i]), j = 0, sum++;
 		if (format[i])
-			_putchar(format[i]), j = 0, sum++, i++;
+			i++;
 	}
 	va_end(valist);
 	return (sum);
