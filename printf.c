@@ -1,11 +1,9 @@
 #include "holberton.h"
 /**
+ * _printf - prints 'f' on standard output
+ * @format: string format
  *
- *
- *
- *
- *
- *
+ * Return: number of chars printed...so only f so 1 char...lol
  */
 int _printf(const char *format, ...)
 {
@@ -26,14 +24,17 @@ int _printf(const char *format, ...)
 
 	while (format && format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] == '%')
+			_putchar('%'), sum++, i += 2;
+		else if (format[i] == '%')
 			/*start of mods while logic*/
 			while (mods[j++].mod)
 				if (format[i + 1] == (*mods[j - 1].mod))
 					sum += mods[j - 1].func(valist), i += 2;
 			/*end of while logic*/
 			/*prints format and incr sum by 1*/
-		_putchar(format[i]), j = 0, sum++, i++;
+		if (format[i])
+			_putchar(format[i]), j = 0, sum++, i++;
 	}
 	va_end(valist);
 	return (sum);

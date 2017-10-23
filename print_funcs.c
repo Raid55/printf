@@ -7,10 +7,10 @@ int _print_int(va_list list)
 {
 	int n = va_arg(list, int);
 
-	_print_int_helper(n);
+	_print_int_print_helper(n);
 
-	/*todo count int and return int size*/
-	return (1);
+
+	return (_print_int_count_helper(n));
 }
 /**
  * _print_str
