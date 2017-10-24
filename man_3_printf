@@ -1,0 +1,29 @@
+.TH man 3 "01:20 24 Oct 2017" "0.32" "_printf man page"
+.SH NAME
+.B _printf
+ - is a function that prints f to standard output 
+.SH SYNOPSIS
+	#include <stdarg.h>
+	#include <stdlib.h>
+
+	int _putchar(char);
+
+	void _print_int_print_helper(int);
+	1int _print_int_count_helper(int);
+	int _print_int(va_list);
+	int _print_str(va_list);
+	int _print_char(va_list);
+	int _print_percent(va_list);
+	
+	int _printf(const char *format, ...);
+.SH DESCRIPTION
+A clone of _printf in a small way, It handles basic flags and works using structs, variadic functions and function pointers.
+.SH OPTIONS
+.B _printf
+ [Format] [...]
+.SH SEE ALSO
+.I night_coding(3am), breakfast_in_bed(10:00am), csgo(mg2), holberton_man_page(2), hello_world(101);
+.SH BUGS
+Still missing a few features that printf has, different behavior with format aswell.
+.SH AUTHOR
+Raid55 (Nick B.)
