@@ -5,32 +5,41 @@
  */
 void _print_int_print_helper(int n)
 {
+	unsigned int un;
+
 	if (n == 0)
+	{
 		_putchar('0');
+		return;
+	}	
 
-    if (n < 0) {
-        _putchar('-');
-        n = -n;
-    }
+    if (n < 0) 
+        _putchar('-'), un = -n;
+	else
+		un = n;
 
-    if (n / 10)
-        _print_int_print_helper(n / 10);
+    if (un / 10)
+        _print_int_print_helper(un / 10);
  
-    _putchar(n % 10 + '0');
+    _putchar(un % 10 + '0');
+	return;
 }
 
 int _print_int_count_helper(int n)
 {
+	unsigned int un;
 	int sum = 0;
 	
-	if (sum < 0)
-		sum++;
 	if (n == 0)
-		sum++;
-
- 	while(n != 0)
+		return (1);
+	
+	if (n < 0)
+		sum++, un = -n;
+	else
+		un = n;
+ 	while(un != 0)
     {
-        n /= 10;
+        un /= 10;
         sum++;
     }
 
