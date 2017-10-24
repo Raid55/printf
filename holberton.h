@@ -17,8 +17,8 @@ int _print_char(va_list);
 int _print_percent(va_list);
 
 /**
- * struct f_mod - structure that holds format mods and their function
- * @mod: what mod
+ * struct selector_struct - structure that holds format mods and their function
+ * @sel: what selector to choose
  * @func: func for its respective mod
  */
 typedef struct selector_struct
