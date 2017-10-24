@@ -3,25 +3,27 @@
  * _print_int_print_helper - helps _print_int put every char to stdio
  * @n: int to be printed
  */
-void _print_int_print_helper(int n)
+int _print_int_helper(int n)
 {
 	unsigned int un;
+	int sum = 0;
 
 	if (n == 0)
 	{
 		_putchar('0');
-		return;
+		return(1);
 	}
 
 	if (n < 0)
-		_putchar('-'), un = -n;
+		_putchar('-'), un = -n, sum++;
 	else
 		un = n;
 
 	if (un / 10)
-		_print_int_print_helper(un / 10);
+		sum += _print_int_helper(un / 10);
 
 	_putchar(un % 10 + '0');
+	return (sum + 1);
 }
 /**
  * _print_int_count_helper - helper _print_int to count
@@ -29,20 +31,20 @@ void _print_int_print_helper(int n)
  *
  * Return: number of chars the int would print
  */
-int _print_int_count_helper(int n)
-{
-	unsigned int un;
-	int sum = 0;
+/* int _print_int_count_helper(int n) */
+/* { */
+	/* unsigned int un; */
+	/* int sum = 0; */
 
-	if (n == 0)
-		return (1);
+	/* if (n == 0) */
+		/* return (1); */
 
-	if (n < 0)
-		sum++, un = -n;
-	else
-		un = n;
-	while (un != 0)
-		un /= 10, sum++;
+	/* if (n < 0) */
+		/* sum++, un = -n; */
+	/* else */
+		/* un = n; */
+	/* while (un != 0) */
+		/* un /= 10, sum++; */
 
-	return (sum);
-}
+	/* return (sum); */
+/* } */

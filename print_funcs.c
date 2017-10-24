@@ -9,9 +9,7 @@ int _print_int(va_list list)
 {
 	int n = va_arg(list, int);
 
-	_print_int_print_helper(n);
-
-	return (_print_int_count_helper(n));
+	return(_print_int_helper(n));
 }
 /**
  * _print_str - prints string

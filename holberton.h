@@ -7,8 +7,8 @@
 
 /*helper functions that will do the helping*/
 int _putchar(char);
-void _print_int_print_helper(int);
-int _print_int_count_helper(int);
+int _print_int_helper(int);
+/* int _print_int_count_helper(int); */
 
 /*printing functions that will do the printing */
 int _print_int(va_list);
