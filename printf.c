@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			j = 0;
+			if (!format[i + 1])
+				return (-1);
 			while (mods[j].mod)
 			{
 				if (format[i + 1] == (*mods[j].mod))
@@ -41,8 +43,13 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
-			if (mods[j].mod == NULL && !format[i + 1])
-				return (-1);
+			if (!mods[j].mod)
+			{
+				_putchar(format[i]);
+				i++;
+				_putchar(format[i]);
+				i++;
+			}
 		}
 		else
 		{
