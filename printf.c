@@ -28,19 +28,30 @@ int _printf(const char *format, ...)
 
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == '\0')
-			return (-1);
 		if (format[i] == '%')
-			/*start of mods while logic*/
-			while (mods[j++].mod)
-				if (format[i + 1] == (*mods[j - 1].mod))
-					sum += mods[j - 1].func(valist), i += 2;
-			/*end of while logic*/
-		if (format[i] && format[i] != '%')
-			_putchar(format[i]), j = 0, sum++;
-		if (format[i])
+		{
+			j = 0;
+			while (mods[j].mod)
+			{
+				if (format[i + 1] == (*mods[j].mod))
+				{
+					sum += mods[j].func(valist);
+					i += 2;
+					break;
+				}
+				j++;
+			}
+			if (mods[j].mod == NULL && !format[i + 1])
+				return (-1);
+		}
+		else
+		{
+			_putchar(format[i]);
 			i++;
+			sum++;
+		}
 	}
+
 	va_end(valist);
 	return (sum);
 }

@@ -19,15 +19,14 @@ int _print_int(va_list list)
 int _print_str(va_list list)
 {
 	int i = 0;
-	int sum;
 	char *s = va_arg(list, char *);
 	
 	if (s == NULL)
 		s = "(null)";
 	while (s[i])
-		_putchar(s[i]), i++, sum++;
+		_putchar(s[i]), i++;
 
-	return (sum);
+	return (i);
 }
 /**
  * _print_char
@@ -38,8 +37,8 @@ int _print_char(va_list list)
 { 
 	char c = va_arg(list, int);
 	
-	if (!c)
-		c = ' ';
+	/* if (!c) */
+		/* c = ' '; */
 	_putchar(c);
 
 	return (1);
