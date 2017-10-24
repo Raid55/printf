@@ -9,24 +9,26 @@
 int _putchar(char);
 void _print_int_print_helper(int);
 int _print_int_count_helper(int);
+
 /*printing functions that will do the printing */
 int _print_int(va_list);
 int _print_str(va_list);
 int _print_char(va_list);
 int _print_percent(va_list);
 
-/*main functions to prototype*/
-int _printf(const char *format, ...);
-
 /**
- * f_mod - structure that holds format mods and their function
+ * struct f_mod - structure that holds format mods and their function
  * @mod: what mod
  * @func: func for its respective mod
  */
-typedef struct f_mod
+typedef struct selector_struct
 {
-	char *mod;
+	char *sel;
 	int (*func)(va_list);
-} format_mod;
+} format_selector;
+
+/*main functions to prototype*/
+int _printf(const char *format, ...);
+int _mini_vprintfv(const char *format, va_list list, format_selector mods[]);
 
 #endif
