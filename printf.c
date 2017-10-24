@@ -46,9 +46,9 @@ int _printf(const char *format, ...)
 			if (!mods[j].mod)
 			{
 				_putchar(format[i]);
-				i++;
+				i++, sum++;
 				_putchar(format[i]);
-				i++;
+				i++, sum++;
 			}
 		}
 		else
