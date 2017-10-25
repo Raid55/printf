@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 		{"s", _print_str},
 		{"i", _print_int},
 		{"d", _print_int},
+		{"R", _print_rot13},
 		{"%", _print_percent},
 		{NULL, NULL}
 	};
@@ -23,7 +24,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(valist, format);
-	sum = _mini_vprintfv(format, valist, mods);
+	sum = _mini_vprintf(format, valist, mods);
 	va_end(valist);
 	return (sum);
 }
@@ -37,9 +38,9 @@ int _printf(const char *format, ...)
  * printf would do but just spliting the workload
  * Return: sum of all printed chars
  */
-int _mini_vprintfv(const char *format, va_list list, format_selector mods[])
+int _mini_vprintf(const char *format, va_list list, format_selector mods[])
 {
-	int i, j, sum;
+	int i, j, sum, tmpSum;
 
 	i = 0, j = 0, sum = 0;
 	while (format[i])
@@ -53,8 +54,10 @@ int _mini_vprintfv(const char *format, va_list list, format_selector mods[])
 			{
 				if (format[i + 1] == (*mods[j].sel))
 				{
-					sum += mods[j].func(list);
-					i += 2;
+					tmpSum = mods[j].func(list);
+					if (tmpSum == -1)
+						return (-1);
+					sum += tmpSum, i += 2;
 					break;
 				}
 				j++;
