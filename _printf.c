@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 		{"s", _print_str},
 		{"i", _print_int},
 		{"d", _print_int},
+		{"b", _print_binary},
 		{"r", _print_rev},
 		{"R", _print_rot13},
 		{"%", _print_percent},

@@ -45,3 +45,19 @@ void _print_rev_helper(char *s)
 		return;
 	}
 }
+/**
+ * 
+ *
+ */
+
+int _print_binary_helper(int n)
+{
+	int sum = 0;
+
+    if (n > 1)
+        sum += _print_binary_helper(n / 2);
+
+	_putchar(n % 2 + '0'); 
+    
+	return (sum + 1);
+}

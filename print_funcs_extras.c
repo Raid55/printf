@@ -30,12 +30,12 @@ int _print_rot13(va_list list)
  *
  *
  */
-int _print_rev(va_list arguments)
+int _print_rev(va_list list)
 {
 	char *s;
 	int i = 0;
 
-	s = va_arg(arguments, char *);
+	s = va_arg(list, char *);
 
 	if (s == NULL)
 		return (-1);
@@ -44,4 +44,13 @@ int _print_rev(va_list arguments)
 	while (s[i++]);
 
 	return (--i);
+}
+/**
+ *
+ */
+int _print_binary(va_list list)
+{
+	int n = va_arg(list, int);
+
+	return ((_print_binary_helper(n)));
 }
