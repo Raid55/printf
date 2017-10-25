@@ -31,10 +31,14 @@ If the function fails, it will print until the moment it fails and return `-1`.
 
 
 ### Notes
-Tested on *Ubuntu 14.04 LTS*.
-Features still in development.
-No known bugs at this time.
-Ty Kevan for help with the README
+Tested on *Ubuntu 14.04 LTS*.  
+
+Features still in development.  
+
+No known bugs at this time.  
+
+Ty Kevan for help with the README  
+
 
 ### Author
 
