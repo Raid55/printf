@@ -22,7 +22,7 @@ A clone of _printf in a small way, It handles basic flags and works using struct
 .B _printf
  [Format] [...]
 .SH SEE ALSO
-.I night_coding(3am), breakfast_in_bed(10:00am), csgo(mg2), holberton_man_page(2), hello_world(101);
+.I night_coding(3am), _mini_vprintf(1), csgo(mg2), holberton_man_page(2), hello_world(101);
 .SH BUGS
 Still missing a few features that printf has, different behavior with format aswell.
 .SH AUTHOR
