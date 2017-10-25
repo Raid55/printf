@@ -49,8 +49,7 @@ void _print_rev_helper(char *s)
  * 
  *
  */
-
-int _print_binary_helper(int n)
+int _print_binary_helper(unsigned int n)
 {
 	int sum = 0;
 

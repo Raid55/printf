@@ -1,8 +1,10 @@
 #include "holberton.h"
 
 /**
+ * _print_rot13 - prints string in ROT13
+ * @list: va arg list
  *
- *
+ * Return: amount of printed chars
  */
 int _print_rot13(va_list list)
 {
@@ -27,8 +29,10 @@ int _print_rot13(va_list list)
 	return (sum);
 }
 /**
+ * _print_rev - prints reverse of string
+ * @list: va args list
  *
- *
+ * Return: amount of printed chars
  */
 int _print_rev(va_list list)
 {
@@ -50,7 +54,17 @@ int _print_rev(va_list list)
  */
 int _print_binary(va_list list)
 {
-	int n = va_arg(list, int);
 
-	return ((_print_binary_helper(n)));
+	int n = va_arg(list, int);
+	unsigned int x;
+	if (n == 0)
+	{
+		_putchar('0');
+		return(1);
+	}
+	if (n < 0)
+		return (-1);
+
+	x = n;
+	return ((_print_binary_helper(x)));
 }

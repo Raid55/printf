@@ -10,7 +10,7 @@ int _putchar(char);
 int _print_int_helper(int);
 /* int _print_int_count_helper(int); */
 void _print_rev_helper(char *s);
-int _print_binary_helper(int n);
+int _print_binary_helper(unsigned int n);
 
 /*printing functions that will do the printing */
 int _print_int(va_list);
