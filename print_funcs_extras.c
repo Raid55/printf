@@ -26,4 +26,21 @@ int _print_rot13(va_list list)
 	}
 	return (sum);
 }
+/**
+ *
+ *
+ */
+int _print_rev(va_list list)
+{
+	int i, sum;
+	char *s = va_arg(list, char *);
 
+	i = 0, sum = 0;
+	while (s[i])
+		i++;
+
+	while (i >= 0)
+		_putchar(s[i]), sum++, i--;
+	
+	return (--sum);
+}

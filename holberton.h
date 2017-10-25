@@ -15,6 +15,7 @@ int _print_int(va_list);
 int _print_str(va_list);
 int _print_char(va_list);
 int _print_percent(va_list);
+int _print_rev(va_list);
 int _print_rot13(va_list);
 /**
  * struct selector_struct - structure that holds format mods and their function
