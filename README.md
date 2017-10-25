@@ -16,7 +16,7 @@ If the function fails, it will print until the moment it fails and return `-1`.
 | utils.c | Holds utility functions, such as \_putchar |
 | holberton.h | File that holds all prototypes and data structs and others |
 
-###### Usage
+### Usage
 
 `_printf([FORMAT], [...]);`
 
@@ -31,11 +31,12 @@ If the function fails, it will print until the moment it fails and return `-1`.
 
 
 ### Notes
-Tested on *Ubuntu 14.04 LTS*
+Tested on *Ubuntu 14.04 LTS*.
 Features still in development.
 No known bugs at this time.
+Ty Kevan for help with the README
 
-### Authors
+### Author
 
 * [**Raid55 (Nick B.)**](https://github.com/Raid55)
 
