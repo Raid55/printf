@@ -1,7 +1,7 @@
 .TH man 3 "01:20 24 Oct 2017" "0.32" "_printf man page"
 .SH NAME
 .B _printf
- - is a function that prints f to standard output 
+ - is a function that prints f to standard output. It returns the value of -1 if the functions fails, otherwise it returns the amount of chars printed.
 .SH SYNOPSIS
 	#include <stdarg.h>
 	#include <stdlib.h>
@@ -16,6 +16,9 @@
 	int _print_percent(va_list);
 	
 	int _printf(const char *format, ...);
+	
+	_printf("%s first letter is %c", "Monday", 'M');
+
 .SH DESCRIPTION
 A clone of _printf in a small way, It handles basic flags and works using structs, variadic functions and function pointers.
 .SH OPTIONS

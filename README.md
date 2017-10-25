@@ -29,6 +29,10 @@ If the function fails, it will print until the moment it fails and return `-1`.
 | `%r` | Prints a string in reverse |
 | `%R` | Prints string in ROT13 encryption |
 
+### Example
+
+`_printf("%s is %d years old in mental age", "Raid55", 14)`
+`_printf("%R is gibberish and this %r", "this will be printed in ROT13", "this will be in rev")`
 
 ### Notes
 Tested on *Ubuntu 14.04 LTS*.  
