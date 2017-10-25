@@ -30,17 +30,18 @@ int _print_rot13(va_list list)
  *
  *
  */
-int _print_rev(va_list list)
+int _print_rev(va_list arguments)
 {
-	int i, sum;
-	char *s = va_arg(list, char *);
+	char *s;
+	int i = 0;
 
-	i = 0, sum = 0;
-	while (s[i])
-		i++;
+	s = va_arg(arguments, char *);
 
-	while (i >= 0)
-		_putchar(s[i]), sum++, i--;
+	if (s == NULL)
+		return (-1);
+	_print_rev_helper(s);
 	
-	return (--sum);
+	while (s[i++]);
+
+	return (--i);
 }

@@ -27,3 +27,21 @@ int _print_int_helper(int n)
 	_putchar(un % 10 + '0');
 	return (sum + 1);
 }
+/**
+ * _print_rev_helper - reverse letters and helps _print_rev
+ * @s: string
+ *
+ * Return: void
+ */
+void _print_rev_helper(char *s)
+{
+	if (*s)
+	{
+		_print_rev_helper(s + 1);
+		_putchar(*s);
+	}
+	else
+	{
+		return;
+	}
+}
